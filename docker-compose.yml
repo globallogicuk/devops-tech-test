@@ -1,19 +1,16 @@
 version: '3.8'
 
-networks:
-    devTechTest:
-      external: false
-
 services:
   mysql_db_container:
     image: mysql:latest
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: 123456
+      MYSQL_DATABASE: devopstt
     ports:
       - 3306:3306
-    networks:
-      - devTechTest
   exec_ubuntu_container:
     container_name: exec_ubuntu_container
     image: devopstt
@@ -21,8 +18,6 @@ services:
     ports:
       - "3000:3000"
       - "222:22"
-    networks:
-      - devTechTest
     depends_on: 
       - mysql_db_container
     command: ["sleep", "infinity"]
