@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   mysql_db_container:
-    image: mysql:latest
+    image: mysqltt
+    build:
+      dockerfile: Dockerfile.db
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: 123456
@@ -14,6 +16,8 @@ services:
   exec_ubuntu_container:
     container_name: exec_ubuntu_container
     image: devopstt
+    build:
+      dockerfile: Dockerfile.exec
     restart: on-failure
     ports:
       - "3000:3000"
