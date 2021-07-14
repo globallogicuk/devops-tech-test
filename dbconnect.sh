@@ -18,7 +18,7 @@ then
         echo "Scripts path $script_dir does not exist"
 fi
 # Check if we can login to sql server
-mysql -h $db_host -u $db_user -p$db_pass -se"USE $db_name;"
+mysql -h $db_host -u $db_user -p $db_pass -se"USE $db_name;"
 # Get list of files in scripts order by number sequence ascending
 for sql in `ls -v $script_dir`
 do
