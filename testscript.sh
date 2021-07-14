@@ -18,12 +18,12 @@ then
         echo "Scripts path $script_dir does not exist"
 fi
 # Check if we can login to sql server
-mysql -h $db_host -u $db_user -p $db_pass -se"USE $db_name;"
+mysql -h $db_host -u $db_user -p$db_pass $db_name -se"USE $db_name;"
 # Get list of files in scripts order by number sequence ascending
 for sql in `ls -v $script_dir`
 do
         # For each file check if order number greater than sql version
-        db_ver=`mysql -s -N -e "select version from $db_name.versionTable"`
+        db_ver=`mysql -h $db_host -u $db_user -p$db_pass $db_name -s -N -e "select version from $db_name.versionTable"`
         sql_ver=$(echo $sql | sed -e 's/[^0-9]//g')
         # Apply SQL code if true
         if [ "$sql_ver" -gt "$db_ver" ]; then
