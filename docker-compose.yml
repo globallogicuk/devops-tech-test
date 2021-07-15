@@ -19,6 +19,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.exec
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: 123456
+      MYSQL_DATABASE: devopstt
     restart: on-failure
     depends_on:
       - mysql_db_container
