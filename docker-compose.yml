@@ -1,3 +1,4 @@
+---
 version: '3.8'
 
 services:
@@ -19,6 +20,6 @@ services:
       context: .
       dockerfile: Dockerfile.exec
     restart: on-failure
-    depends_on: 
+    depends_on:
       - mysql_db_container
     command: ["sleep", "infinity"]
