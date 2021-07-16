@@ -27,4 +27,4 @@ services:
     restart: on-failure
     depends_on:
       - mysql_db_container
-    command: ["sleep", "infinity"]
+    # command: ["sleep", "infinity"]

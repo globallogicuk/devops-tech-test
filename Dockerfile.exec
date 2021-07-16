@@ -4,4 +4,5 @@ python3 \
 ruby-full \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
 COPY dbscripts/ /scripts/
-ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
+COPY entrypoint.sh /scripts/
+ENTRYPOINT ["/bin/bash", "/scripts/entrypoint.sh"]
