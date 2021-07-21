@@ -5,10 +5,6 @@ python3-pip \
 ruby-full \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN pip3 install mysql-connector 
-COPY dbscripts/ /scripts/
-COPY /test/dbtest.py /scripts/
+COPY scripts/ dbscripts/ /test/dbtest.py entrypoint.sh /scripts/
 RUN chmod +x /scripts/dbtest.py
-COPY entrypoint.sh /scripts/
-COPY testscript.sh /scripts/
-RUN chmod +x /scripts/testscript.sh
 ENTRYPOINT ["/bin/bash", "/scripts/entrypoint.sh"]
