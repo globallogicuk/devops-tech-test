@@ -3,6 +3,7 @@ RUN apt-get update && apt-get install -y \
 python3 \
 python3-pip \
 ruby-full \
+mysql-client \
 && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN pip3 install mysql-connector 
 COPY scripts/ dbscripts/ /test/dbtest.py entrypoint.sh /scripts/
