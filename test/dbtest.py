@@ -35,6 +35,8 @@ try:
             print("The contents of {} updated correctly".format(name))
         else:
            print("ERROR: The contents of {} NOT updated correctly".format(name))
+except ValueError:
+    print("someTable has updated but the table is empty")
 except mysql.connector.Error as err:
     print("ERROR %d IN CONNECTION: %s" % (err.args[0], err.args[1]))
 db_cursor.close()
