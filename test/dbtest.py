@@ -34,7 +34,8 @@ try:
         if result == test:
             print("The contents of {} updated correctly".format(name))
         else:
-           print("ERROR: The contents of {} NOT updated correctly".format(name))
+            print("ERROR: The contents of {} NOT updated correctly".format(name))
+    f.close()
 except ValueError:
     print("someTable has updated but the table is empty")
 except mysql.connector.Error as err:
