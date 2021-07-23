@@ -17,8 +17,6 @@ def test_version():
     assert resultVersion == version
 
 def test_appTable():
-    f = open('expecteddbstate/tables.json',)
-    content = json.load(f)
     db_cursor.execute(f"SELECT * FROM appTable;")
     result = db_cursor.fetchone()
     fileoutput = open("expecteddbstate/appTable.json")
@@ -26,8 +24,6 @@ def test_appTable():
     assert result == test
 
 def test_someTable():
-    f = open('expecteddbstate/tables.json',)
-    content = json.load(f)
     db_cursor.execute(f"SELECT * FROM someTable;")
     result = db_cursor.fetchone()
     fileoutput = open("expecteddbstate/someTable.json")
