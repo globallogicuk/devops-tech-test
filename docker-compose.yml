@@ -25,7 +25,7 @@ services:
       MYSQL_PASSWORD: 123456
       MYSQL_DATABASE: devopstt
     restart: on-failure
-  # volumes:
-    # - <path/to/your/script>:<target/directory>
+    volumes:
+      - ./provescript/testscript.sh:/provescript/testscript.sh
     depends_on:
       - mysql_db_container

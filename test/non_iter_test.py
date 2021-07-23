@@ -1,0 +1,36 @@
+import json
+import mysql.connector
+
+db_connection = mysql.connector.connect(
+  host="mysql_container",
+  user="dev",
+  passwd="123456",
+  database="devopstt"
+)
+db_cursor = db_connection.cursor(dictionary=True)
+
+def test_version():
+    db_cursor.execute("SELECT version FROM versionTable;")
+    resultVersion = db_cursor.fetchone()
+    f = open('expecteddbstate/versionTable.json')
+    version = json.load(f)
+    assert resultVersion == version
+
+def test_appTable():
+    f = open('expecteddbstate/tables.json',)
+    content = json.load(f)
+    db_cursor.execute(f"SELECT * FROM appTable;")
+    result = db_cursor.fetchone()
+    fileoutput = open("expecteddbstate/appTable.json")
+    test = json.load(fileoutput)
+    assert result == test
+
+def test_someTable():
+    f = open('expecteddbstate/tables.json',)
+    content = json.load(f)
+    db_cursor.execute(f"SELECT * FROM someTable;")
+    result = db_cursor.fetchone()
+    fileoutput = open("expecteddbstate/someTable.json")
+    test = json.load(fileoutput)
+    assert result == test
+    
