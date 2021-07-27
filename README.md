@@ -49,10 +49,13 @@ We will come back to you asap regarding next steps.
 We are looking forward to your submission.
 
 ## Test Setup
+
 ### Adding your solution
 
-Within `docker-compose.yml` there is a volume mount on lines `28 - 29 `. Use this to mount your solution into the container.
+Within `docker-compose.yml` there is a volume mount on lines `28 - 29`. Use this to mount your solution into the container.
+
 ### Running the containers
+
 `$ docker compose up -d`
 
 This will create the two containers 
