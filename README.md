@@ -58,7 +58,7 @@ Within `docker-compose.yml` there is a volume mount on lines `28 - 29`. Use this
 
 `$ docker compose up -d`
 
-This will create the two containers 
+This will create the two containers
 
 `exec_container`
 
