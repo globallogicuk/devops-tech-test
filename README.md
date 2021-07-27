@@ -50,28 +50,27 @@ We are looking forward to your submission.
 
 ## Test Setup
 ### Adding your solution
-\
-Within ```docker-compose.yml``` there is a volume mount on lines ```28 - 29 ```. Use this to mount your solution into the container.
 
+Within `docker-compose.yml` there is a volume mount on lines `28 - 29 `. Use this to mount your solution into the container.
 ### Running the containers
-```$ docker compose up -d```
+`$ docker compose up -d`
 
 This will create the two containers 
 
-```exec_container```
+`exec_container`
 
 and
 
-```mysql_container```
+`mysql_container`
 
-Required Language dependencies are installed in the ```exec_container```, your solution should be invoked on the ```exec_container```.
+Required Language dependencies are installed in the `exec_container`, your solution should be invoked on the `exec_container`.
 
 There is a test provided which can be run using;
 
-```$ cd scripts```
+`$ cd scripts`
 
-```$ pytest```
+`$ pytest`
 
-Any other dependencies you require to complete the Tech test should be added in the script in the root ```entrypoint.sh```
+Any other dependencies you require to complete the Tech test should be added in the script in the root `entrypoint.sh`
 
-**do not delete** ```sleep infinity``` leave this as the last command in ```entrypoint.sh```
+**do not delete** `sleep infinity` leave this as the last command in `entrypoint.sh`
