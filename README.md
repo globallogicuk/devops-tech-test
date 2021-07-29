@@ -52,7 +52,7 @@ We are looking forward to your submission.
 
 ### Adding your solution
 
-Within `docker-compose.yml` there is a volume mount on lines `28 - 29`. Use this to mount your solution into the container.
+Within `docker-compose.yml` there is a volume mount. Use this to mount your solution into the container by saving your script in the `submissionscript` directory.
 
 ### Running the containers
 
