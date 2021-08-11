@@ -68,7 +68,7 @@ and
 
 Required Language dependencies are installed in the `exec_container`, your solution should be invoked on the `exec_container`.
 
-To connect to the `exec_container` 
+To connect to the `exec_container`
 use;
 
 `$ docker exec -it exec_container /bin/bash`
@@ -77,14 +77,13 @@ Once connected to the `exec_container` There is a test provided which can be run
 
 `$ cd scripts`
 
-`$ pytest `
+`$ pytest`
 
 Any other dependencies you require to complete the Tech test should be added to the script in the `entrypoint.sh` file in the root directory of the repository.
 
 e.g. `pip3 install mysql-client`
 
 **do not delete** `sleep infinity` leave this as the last command in `entrypoint.sh`
-
 
 ### Database credentials
 
