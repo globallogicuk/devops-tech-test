@@ -67,7 +67,7 @@ docker-compose up -d
 This will create two containers called:
 
 - exec_container
-- mysql_container`
+- mysql_container
 
 Required language dependencies are installed in the `exec_container`, your solution should be invoked on the `exec_container`.
 
