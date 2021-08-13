@@ -52,7 +52,7 @@ We are looking forward to your submission.
 
 ### Adding your solution
 
-Add you submission to the `submissionsscript` directory. 
+Add you submission to the `submissionsscript` directory.
 
 This will make the script available within the container due to a volume mount within `docker-compose.yml`
 
@@ -61,25 +61,26 @@ This will make the script available within the container due to a volume mount w
 To start the testing environment please run:
 
 ```sh
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 This will create two containers called:
+
 - exec_container
 - mysql_container`
 
 Required language dependencies are installed in the `exec_container`, your solution should be invoked on the `exec_container`.
 
-### Adding script dependencies 
+### Adding script dependencies
 
-Any other dependencies you require to complete the tech test should be added to the `entrypoint.sh` file in the root directory of the repository. 
+Any other dependencies you require to complete the tech test should be added to the `entrypoint.sh` file in the root directory of the repository.
 
 e.g. `pip3 install mysql-client`
 
 This ensures they are automatically installed when the container is run. Once dependencies have been added to the file you must restart the environment for them to take effect.
 
 ```sh
-$ docker compose restart -d
+docker compose restart -d
 ```
 
 **do not delete** `sleep infinity` leave this as the last command in `entrypoint.sh`
@@ -89,10 +90,10 @@ $ docker compose restart -d
 Once you're ready to test you script you can connect to the `exec_container`. Due to the volume mount mentioned in [adding your solution](#adding-your-solution) it will already be available within the `exec-container`.
 
 ```sh
-$ docker exec -it exec_container /bin/bash
+docker exec -it exec_container /bin/bash
 ```
 
-Run your script using 
+Run your script using
 
 ```sh
 /submissionscript/<yourscript.lang> /scripts/ dev mysql_container devopstt 123456`
@@ -101,7 +102,7 @@ Run your script using
 You can then run the automated test to check if successful
 
 ``` sh
-$ pytest /scripts/dbtest.py
+pytest /scripts/dbtest.py
 ```
 
 ## Database credentials
