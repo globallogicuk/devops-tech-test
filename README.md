@@ -102,7 +102,7 @@ Run your script using
 You can then run the automated test to check if successful
 
 ``` sh
-pytest /scripts/dbtest.py
+pytest /scripts/db_test.py
 ```
 
 ## Database credentials
