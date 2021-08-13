@@ -1,15 +1,17 @@
-# Preperation
+# DevOps Tech Test
+
+## Preperation
 
 Please Clone this repository and push it up to your own github repository.
 Do **not** fork this repository
 
-# Challenge
+## Challenge
 
 The following use case might be a real-life example from one of our customers, please deliver your best possible solution. Please go through the described scenario and write a script, in one of the below languages, implementing a fix to the issue below.
 
 For the development of the scripts you have 4 hours and are allowed to use Google and any other material as long as the work submitted was written by you.
 
-## Use Case
+### Use Case
 
 - A database upgrade requires the execution of numbered SQL scripts stored in a specified folder, named such as `045.createtable.sql`
   - Sample scripts are provided in the `dbscripts` directory
@@ -24,7 +26,7 @@ For the development of the scripts you have 4 hours and are allowed to use Googl
   - `./db-upgrade.your-lang directory-with-sql-scripts username-for-the-db db-host db-name db-password`
   - Example (bash): `./db-upgrade.sh dbscripts myUser myDbServer techTestDB SuperSecretPassword1!`
 
-## Requirements
+### Requirements
 
 - Supported Languages (No other languages will be accepted):
   - Bash
@@ -35,7 +37,7 @@ For the development of the scripts you have 4 hours and are allowed to use Googl
 
 How would you implement this in order to create an automated solution to the above requirements?
 
-# Submission
+## Submission
 
 Please send us:
 
@@ -46,15 +48,15 @@ We will come back to you asap regarding next steps.
 
 We are looking forward to your submission.
 
-# Environment Setup
+## Environment Setup
 
-## Adding your solution
+### Adding your solution
 
 Add you submission to the `submissionsscript` directory. 
 
 This will make the script available within the container due to a volume mount within `docker-compose.yml`
 
-## Running the containers
+### Running the containers
 
 To start the testing environment please run:
 
@@ -68,7 +70,7 @@ This will create two containers called:
 
 Required language dependencies are installed in the `exec_container`, your solution should be invoked on the `exec_container`.
 
-## Adding script dependencies 
+### Adding script dependencies 
 
 Any other dependencies you require to complete the tech test should be added to the `entrypoint.sh` file in the root directory of the repository. 
 
@@ -82,7 +84,7 @@ $ docker compose restart -d
 
 **do not delete** `sleep infinity` leave this as the last command in `entrypoint.sh`
 
-## Testing your script
+### Testing your script
 
 Once you're ready to test you script you can connect to the `exec_container`. Due to the volume mount mentioned in [adding your solution](#adding-your-solution) it will already be available within the `exec-container`.
 
@@ -102,7 +104,7 @@ You can then run the automated test to check if successful
 $ pytest /scripts/dbtest.py
 ```
 
-# Database credentials
+## Database credentials
 
 The database credentials are set in `docker-compose.yml` and are as follows;
 
